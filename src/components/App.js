@@ -2,8 +2,11 @@ import React from 'react';
 
 import JobList from './JobList';
 import JobDetail from './JobDetail';
+import JobApply from './JobApply';
 import { BrowserRouter, Route } from 'react-router-dom';
-import "../css/App.css"
+import "../css/App.css";
+import logo from '../Constants/amazatic-logo.png';
+
 
 class App extends React.Component {
 
@@ -15,7 +18,7 @@ class App extends React.Component {
           <div>                                                                                                                                                                                         
               <header className="main-header">                                                                                                                                                          
                   <div className="logo">                                                                                                                                                                
-                      <img alt="logo" src="Constants/Images/amazatic-logo.png"  />                                                                                                                      
+                      <img alt="logo" src={logo}  />                                                                                                                      
                       <label className="header-title"> Job Portal</label>                                                                                                                               
                   </div>                                                                                                                                                                                
               </header>                                                                                                                                                                                 
@@ -24,7 +27,7 @@ class App extends React.Component {
                   <div>                                                                                                                                                                                 
                       <Route path="/" exact component={JobList} />
                       <Route path="/detail" component={JobDetail} />                                                                                                                                    
-                                                                                                                                                                                                        
+                      <Route path="/apply"  component={JobApply} />                                                                                                                                      
                   </div>                                                                                                                                                                                
           </div>                                                                                                                                                                                        
           <div>                                                                                                                                                                                         

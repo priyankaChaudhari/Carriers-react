@@ -3,6 +3,7 @@ import React from 'react';
 import JobListApi from '../api/JobListApi';
 import Spinner from './Spinner';
 import JobCard from './JobCard';
+import "../css/App.css";
 
 class JobList extends React.Component {
     constructor(props) {
@@ -23,9 +24,14 @@ class JobList extends React.Component {
             return <Spinner></Spinner>
             } else {
                 const renderedList = this.state.jobList.data.map(job => {
-                    return <JobCard key={job.id} job={job} ></JobCard>
+                    return (
+                        <div className="container pt-5 mt-5">
+                            <JobCard key={job.id} job={job} ></JobCard>
+                        </div>  
+
+                    )
                 });
-                return <div className="ui relaxed divided list">{renderedList}</div>;
+                return <div >{renderedList}</div>;
             }
 
     }
